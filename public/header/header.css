@@ -1,0 +1,124 @@
+html{
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header{
+    padding: 15px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.sticky{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.header .logo{
+    height: 56px;
+}
+
+.navbar-list{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding: 0px !important; 
+    margin: 15px !important; 
+}
+
+.navbar-link{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 19px;
+    display: inline-block;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+}
+
+.navbar-link:hover{
+    color: rgb(255, 185, 74);
+}
+
+.mobile-navbar-btn{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-nav-icon{
+    height: 20px;
+}
+
+.mobile-nav-icon[alt="close-button"]{
+    display: none;
+}
+
+@media(max-width: 1024px){
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar{
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        left: 0;
+        top: 0;
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[alt="close-button"]{
+        display: block;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[alt="menu-button"]{
+        display: none;
+    }
+}
+
+.ribbon-btn{
+    color: white;
+    text-decoration-line: none;
+}
+
+.ribbon-btn:hover{
+    color: rgb(255, 185, 74);
+}
